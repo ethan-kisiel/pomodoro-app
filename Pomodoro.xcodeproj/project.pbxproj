@@ -14,9 +14,10 @@
 		88A29E5A28BD23CA0068799C /* BreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E5928BD23CA0068799C /* BreakView.swift */; };
 		88A29E5C28BD23D30068799C /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E5B28BD23D30068799C /* FocusView.swift */; };
 		88A29E5E28BD23E10068799C /* CreatePomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E5D28BD23E10068799C /* CreatePomodoroView.swift */; };
-		88A29E6228BD24850068799C /* return-to-focus.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6128BD24850068799C /* return-to-focus.wav */; };
-		88A29E6428BD248F0068799C /* begin-break.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6328BD248F0068799C /* begin-break.wav */; };
 		88A29E6728BD24AD0068799C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E6628BD24AD0068799C /* SoundManager.swift */; };
+		88A29E6A28BD27760068799C /* begin-break.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6828BD27750068799C /* begin-break.mp3 */; };
+		88A29E6B28BD27760068799C /* return-to-focus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6928BD27760068799C /* return-to-focus.mp3 */; };
+		88A29E6D28BD28490068799C /* button-press.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6C28BD28490068799C /* button-press.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +29,10 @@
 		88A29E5928BD23CA0068799C /* BreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakView.swift; sourceTree = "<group>"; };
 		88A29E5B28BD23D30068799C /* FocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
 		88A29E5D28BD23E10068799C /* CreatePomodoroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePomodoroView.swift; sourceTree = "<group>"; };
-		88A29E6128BD24850068799C /* return-to-focus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "return-to-focus.wav"; sourceTree = "<group>"; };
-		88A29E6328BD248F0068799C /* begin-break.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "begin-break.wav"; sourceTree = "<group>"; };
 		88A29E6628BD24AD0068799C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		88A29E6828BD27750068799C /* begin-break.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "begin-break.mp3"; sourceTree = "<group>"; };
+		88A29E6928BD27760068799C /* return-to-focus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "return-to-focus.mp3"; sourceTree = "<group>"; };
+		88A29E6C28BD28490068799C /* button-press.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "button-press.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +97,9 @@
 		88A29E6028BD24780068799C /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				88A29E6328BD248F0068799C /* begin-break.wav */,
-				88A29E6128BD24850068799C /* return-to-focus.wav */,
+				88A29E6C28BD28490068799C /* button-press.mp3 */,
+				88A29E6828BD27750068799C /* begin-break.mp3 */,
+				88A29E6928BD27760068799C /* return-to-focus.mp3 */,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -168,9 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88A29E5228BD23570068799C /* Preview Assets.xcassets in Resources */,
+				88A29E6A28BD27760068799C /* begin-break.mp3 in Resources */,
+				88A29E6D28BD28490068799C /* button-press.mp3 in Resources */,
+				88A29E6B28BD27760068799C /* return-to-focus.mp3 in Resources */,
 				88A29E4F28BD23570068799C /* Assets.xcassets in Resources */,
-				88A29E6428BD248F0068799C /* begin-break.wav in Resources */,
-				88A29E6228BD24850068799C /* return-to-focus.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
