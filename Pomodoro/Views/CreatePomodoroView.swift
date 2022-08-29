@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import Neumorphic
 
 struct CreatePomodoroView: View {
+    @State var hours = 0
+    @State var minutes = 0
+    @State var seconds = 0
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HMSPicker(hours: $hours, minutes: $minutes, seconds: $seconds)
+        
+        Button(action: {SoundManager.shared.playSound(soundName: "button-press")})
+        {
+            Text("Play Sound")
+        }.softButtonStyle(RoundedRectangle(cornerRadius: 10))
+        Spacer()
+            .navigationTitle("Create Pomodoro")
     }
 }
 

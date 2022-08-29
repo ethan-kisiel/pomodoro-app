@@ -18,6 +18,9 @@
 		88A29E6A28BD27760068799C /* begin-break.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6828BD27750068799C /* begin-break.mp3 */; };
 		88A29E6B28BD27760068799C /* return-to-focus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6928BD27760068799C /* return-to-focus.mp3 */; };
 		88A29E6D28BD28490068799C /* button-press.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6C28BD28490068799C /* button-press.mp3 */; };
+		88A29E7028BD28F10068799C /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 88A29E6F28BD28F10068799C /* Neumorphic */; };
+		88A29E7228BD31680068799C /* TextInputFieldWithFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E7128BD31680068799C /* TextInputFieldWithFocus.swift */; };
+		88A29E7428BD47670068799C /* HMSPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E7328BD47670068799C /* HMSPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,8 @@
 		88A29E6828BD27750068799C /* begin-break.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "begin-break.mp3"; sourceTree = "<group>"; };
 		88A29E6928BD27760068799C /* return-to-focus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "return-to-focus.mp3"; sourceTree = "<group>"; };
 		88A29E6C28BD28490068799C /* button-press.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "button-press.mp3"; sourceTree = "<group>"; };
+		88A29E7128BD31680068799C /* TextInputFieldWithFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputFieldWithFocus.swift; sourceTree = "<group>"; };
+		88A29E7328BD47670068799C /* HMSPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMSPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A29E7028BD28F10068799C /* Neumorphic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +78,8 @@
 				88A29E4C28BD23560068799C /* ContentView.swift */,
 				88A29E4E28BD23570068799C /* Assets.xcassets */,
 				88A29E5028BD23570068799C /* Preview Content */,
+				88A29E7128BD31680068799C /* TextInputFieldWithFocus.swift */,
+				88A29E7328BD47670068799C /* HMSPicker.swift */,
 			);
 			path = Pomodoro;
 			sourceTree = "<group>";
@@ -128,6 +136,9 @@
 			dependencies = (
 			);
 			name = Pomodoro;
+			packageProductDependencies = (
+				88A29E6F28BD28F10068799C /* Neumorphic */,
+			);
 			productName = Pomodoro;
 			productReference = 88A29E4728BD23560068799C /* Pomodoro.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +167,9 @@
 				Base,
 			);
 			mainGroup = 88A29E3E28BD23560068799C;
+			packageReferences = (
+				88A29E6E28BD28F10068799C /* XCRemoteSwiftPackageReference "neumorphic" */,
+			);
 			productRefGroup = 88A29E4828BD23560068799C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -185,12 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A29E7428BD47670068799C /* HMSPicker.swift in Sources */,
 				88A29E5E28BD23E10068799C /* CreatePomodoroView.swift in Sources */,
 				88A29E5A28BD23CA0068799C /* BreakView.swift in Sources */,
 				88A29E5C28BD23D30068799C /* FocusView.swift in Sources */,
 				88A29E4D28BD23560068799C /* ContentView.swift in Sources */,
 				88A29E4B28BD23560068799C /* PomodoroApp.swift in Sources */,
 				88A29E6728BD24AD0068799C /* SoundManager.swift in Sources */,
+				88A29E7228BD31680068799C /* TextInputFieldWithFocus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +407,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88A29E6E28BD28F10068799C /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88A29E6F28BD28F10068799C /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88A29E6E28BD28F10068799C /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 88A29E3F28BD23560068799C /* Project object */;
 }
