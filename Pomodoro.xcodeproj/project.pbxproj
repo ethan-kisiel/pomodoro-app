@@ -11,6 +11,12 @@
 		88A29E4D28BD23560068799C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E4C28BD23560068799C /* ContentView.swift */; };
 		88A29E4F28BD23570068799C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E4E28BD23570068799C /* Assets.xcassets */; };
 		88A29E5228BD23570068799C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E5128BD23570068799C /* Preview Assets.xcassets */; };
+		88A29E5A28BD23CA0068799C /* BreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E5928BD23CA0068799C /* BreakView.swift */; };
+		88A29E5C28BD23D30068799C /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E5B28BD23D30068799C /* FocusView.swift */; };
+		88A29E5E28BD23E10068799C /* CreatePomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E5D28BD23E10068799C /* CreatePomodoroView.swift */; };
+		88A29E6228BD24850068799C /* return-to-focus.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6128BD24850068799C /* return-to-focus.wav */; };
+		88A29E6428BD248F0068799C /* begin-break.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E6328BD248F0068799C /* begin-break.wav */; };
+		88A29E6728BD24AD0068799C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E6628BD24AD0068799C /* SoundManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		88A29E4C28BD23560068799C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		88A29E4E28BD23570068799C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88A29E5128BD23570068799C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		88A29E5928BD23CA0068799C /* BreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakView.swift; sourceTree = "<group>"; };
+		88A29E5B28BD23D30068799C /* FocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
+		88A29E5D28BD23E10068799C /* CreatePomodoroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePomodoroView.swift; sourceTree = "<group>"; };
+		88A29E6128BD24850068799C /* return-to-focus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "return-to-focus.wav"; sourceTree = "<group>"; };
+		88A29E6328BD248F0068799C /* begin-break.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "begin-break.wav"; sourceTree = "<group>"; };
+		88A29E6628BD24AD0068799C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,9 @@
 		88A29E4928BD23560068799C /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				88A29E6528BD24960068799C /* Managers */,
+				88A29E6028BD24780068799C /* Audio */,
+				88A29E5828BD23BD0068799C /* Views */,
 				88A29E4A28BD23560068799C /* PomodoroApp.swift */,
 				88A29E4C28BD23560068799C /* ContentView.swift */,
 				88A29E4E28BD23570068799C /* Assets.xcassets */,
@@ -65,6 +80,33 @@
 				88A29E5128BD23570068799C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		88A29E5828BD23BD0068799C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88A29E5928BD23CA0068799C /* BreakView.swift */,
+				88A29E5B28BD23D30068799C /* FocusView.swift */,
+				88A29E5D28BD23E10068799C /* CreatePomodoroView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88A29E6028BD24780068799C /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				88A29E6328BD248F0068799C /* begin-break.wav */,
+				88A29E6128BD24850068799C /* return-to-focus.wav */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		88A29E6528BD24960068799C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				88A29E6628BD24AD0068799C /* SoundManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +169,8 @@
 			files = (
 				88A29E5228BD23570068799C /* Preview Assets.xcassets in Resources */,
 				88A29E4F28BD23570068799C /* Assets.xcassets in Resources */,
+				88A29E6428BD248F0068799C /* begin-break.wav in Resources */,
+				88A29E6228BD24850068799C /* return-to-focus.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A29E5E28BD23E10068799C /* CreatePomodoroView.swift in Sources */,
+				88A29E5A28BD23CA0068799C /* BreakView.swift in Sources */,
+				88A29E5C28BD23D30068799C /* FocusView.swift in Sources */,
 				88A29E4D28BD23560068799C /* ContentView.swift in Sources */,
 				88A29E4B28BD23560068799C /* PomodoroApp.swift in Sources */,
+				88A29E6728BD24AD0068799C /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
