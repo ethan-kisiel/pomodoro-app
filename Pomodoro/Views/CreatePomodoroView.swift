@@ -28,14 +28,35 @@ struct CreatePomodoroView: View {
     @State var dBreakMinutes = 0
     @State var dBreakSeconds = 0
     
+    @State var showFocusPicker = false
+    @State var showBreakPicker = false
+    
     var body: some View {
         
         VStack
         {
             Text("Focus Time")
-            HMSPicker(hours: $dFocusHours, minutes: $dFocusMinutes, seconds: $dFocusSeconds)
+                .dynamicTypeSize(.large)
+                .fontWeight(.bold)
+                .onTapGesture
+                {
+                    showFocusPicker.toggle()
+                }
+            if showFocusPicker
+            {
+                HMSPicker(hours: $dFocusHours, minutes: $dFocusMinutes, seconds: $dFocusSeconds)
+            }
             Text("Break Time")
-            HMSPicker(hours: $dBreakHours, minutes: $dBreakMinutes, seconds: $dBreakSeconds)
+                .dynamicTypeSize(.large)
+                .fontWeight(.bold)
+                .onTapGesture
+                {
+                    showBreakPicker.toggle()
+                }
+            if showBreakPicker
+            {
+                HMSPicker(hours: $dBreakHours, minutes: $dBreakMinutes, seconds: $dBreakSeconds)
+            }
             
             Spacer()
             Button(action: {
@@ -47,10 +68,10 @@ struct CreatePomodoroView: View {
             {
                 Text("Start Pomodoro")
             }.softButtonStyle(RoundedRectangle(cornerRadius: 10))
+            Spacer()
         }
 
-    Spacer()
-        .navigationTitle("Create Pomodoro")
+        Spacer()
     }
 }
 

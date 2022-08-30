@@ -29,7 +29,7 @@ struct TimerView: View {
     var body: some View {
         let splitTime = splitSeconds(totalSeconds)
         Text("\(timeRep(splitTime[0]))h : \(timeRep(splitTime[1]))m : \(timeRep(splitTime[2]))s")
-            .dynamicTypeSize(.xxxLarge)
+            .dynamicTypeSize(.accessibility2)
             .fontWeight(.bold)
     }
 }

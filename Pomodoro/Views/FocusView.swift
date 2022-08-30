@@ -12,16 +12,33 @@ struct FocusView: View {
     @State var seconds: Int
     @Binding var showView: ShowView
     var body: some View {
-        TimerView(totalSeconds: seconds)
-            .onReceive(timer)
-        { _ in
-            seconds -= 1
-            if seconds <= 0
-            {
-                SoundManager.shared.playSound(soundName: "begin-break")
-                showView = .endFocus
+        
+        ZStack(alignment: .trailing)
+        {
+            Spacer()
+            Image(systemName:"xmark.circle.fill")
+                .foregroundColor(.red)
+                .onTapGesture
+                {
+                    SoundManager.shared.playSound(soundName: "button-press")
+                    showView = .create
+                }
+        }
+        Spacer()
+        VStack
+        {
+            TimerView(totalSeconds: seconds)
+                .onReceive(timer)
+            { _ in
+                seconds -= 1
+                if seconds <= 0
+                {
+                    SoundManager.shared.playSound(soundName: "begin-break")
+                    showView = .endFocus
+                }
             }
         }
+        Spacer()
     }
 }
 
