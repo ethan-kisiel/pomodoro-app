@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct FocusView: View {
+    @State var seconds: Int
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(seconds)")
     }
 }
 
 struct FocusView_Previews: PreviewProvider {
     static var previews: some View {
-        FocusView()
+        FocusView(seconds: 0)
     }
 }

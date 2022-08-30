@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BreakView: View {
+    @State var seconds: Int
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -15,6 +16,6 @@ struct BreakView: View {
 
 struct BreakView_Previews: PreviewProvider {
     static var previews: some View {
-        BreakView()
+        BreakView(seconds: 0)
     }
 }

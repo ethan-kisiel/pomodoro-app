@@ -7,25 +7,56 @@
 
 import SwiftUI
 import Neumorphic
+func getSeconds(_ hours: Int, _ minutes: Int, _ seconds: Int) -> Int
+{
+    var seconds = seconds
+    seconds += minutes * 60
+    seconds += (hours * 60) * 60
+    return seconds
+}
 
 struct CreatePomodoroView: View {
-    @State var hours = 0
-    @State var minutes = 0
-    @State var seconds = 0
+    @Binding var focusSeconds: Int
+    @Binding var breakSeconds: Int
+    @Binding var showView: ShowView
+    
+    @State var dFocusHours = 0
+    @State var dFocusMinutes = 0
+    @State var dFocusSeconds = 0
+    
+    @State var dBreakHours = 0
+    @State var dBreakMinutes = 0
+    @State var dBreakSeconds = 0
+    
     var body: some View {
-        HMSPicker(hours: $hours, minutes: $minutes, seconds: $seconds)
-        
-        Button(action: {SoundManager.shared.playSound(soundName: "button-press")})
+
+        VStack
         {
-            Text("Play Sound")
-        }.softButtonStyle(RoundedRectangle(cornerRadius: 10))
-        Spacer()
-            .navigationTitle("Create Pomodoro")
+            Text("Focus Time")
+            HMSPicker(hours: $dFocusHours, minutes: $dFocusMinutes, seconds: $dFocusSeconds)
+            Text("Break Time")
+            HMSPicker(hours: $dBreakHours, minutes: $dBreakMinutes, seconds: $dBreakSeconds)
+            
+            Spacer()
+            Button(action: {
+                SoundManager.shared.playSound(soundName: "button-press")
+                focusSeconds = getSeconds(dFocusHours, dFocusMinutes, dFocusSeconds)
+                breakSeconds = getSeconds(dBreakHours, dBreakMinutes, dBreakSeconds)
+                showView = .focus
+            })
+            {
+                Text("Start Pomodoro")
+            }.softButtonStyle(RoundedRectangle(cornerRadius: 10))
+        }
+
+    Spacer()
+        .navigationTitle("Create Pomodoro")
     }
 }
 
 struct CreatePomodoroView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePomodoroView()
+        //CreatePomodoroView()
+        Text("No Preview")
     }
 }
