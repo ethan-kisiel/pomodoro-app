@@ -25,4 +25,9 @@ class SoundManager
             print("Error initializing audio player. \(error.localizedDescription)")
         }
     }
+    
+    func stopSound()
+    {
+        player?.stop()
+    }
 }

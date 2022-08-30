@@ -21,6 +21,7 @@
 		88A29E7028BD28F10068799C /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 88A29E6F28BD28F10068799C /* Neumorphic */; };
 		88A29E7228BD31680068799C /* TextInputFieldWithFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E7128BD31680068799C /* TextInputFieldWithFocus.swift */; };
 		88A29E7428BD47670068799C /* HMSPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E7328BD47670068799C /* HMSPicker.swift */; };
+		88A29E7628BE9CC80068799C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E7528BE9CC80068799C /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		88A29E6C28BD28490068799C /* button-press.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "button-press.mp3"; sourceTree = "<group>"; };
 		88A29E7128BD31680068799C /* TextInputFieldWithFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputFieldWithFocus.swift; sourceTree = "<group>"; };
 		88A29E7328BD47670068799C /* HMSPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMSPicker.swift; sourceTree = "<group>"; };
+		88A29E7528BE9CC80068799C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,6 @@
 				88A29E4E28BD23570068799C /* Assets.xcassets */,
 				88A29E5028BD23570068799C /* Preview Content */,
 				88A29E7128BD31680068799C /* TextInputFieldWithFocus.swift */,
-				88A29E7328BD47670068799C /* HMSPicker.swift */,
 			);
 			path = Pomodoro;
 			sourceTree = "<group>";
@@ -95,9 +96,11 @@
 		88A29E5828BD23BD0068799C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88A29E7328BD47670068799C /* HMSPicker.swift */,
 				88A29E5928BD23CA0068799C /* BreakView.swift */,
 				88A29E5B28BD23D30068799C /* FocusView.swift */,
 				88A29E5D28BD23E10068799C /* CreatePomodoroView.swift */,
+				88A29E7528BE9CC80068799C /* TimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				88A29E5C28BD23D30068799C /* FocusView.swift in Sources */,
 				88A29E4D28BD23560068799C /* ContentView.swift in Sources */,
 				88A29E4B28BD23560068799C /* PomodoroApp.swift in Sources */,
+				88A29E7628BE9CC80068799C /* TimerView.swift in Sources */,
 				88A29E6728BD24AD0068799C /* SoundManager.swift in Sources */,
 				88A29E7228BD31680068799C /* TextInputFieldWithFocus.swift in Sources */,
 			);

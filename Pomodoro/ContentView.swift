@@ -22,9 +22,9 @@ struct ContentView: View {
         case .create:
             CreatePomodoroView(focusSeconds: $focusSeconds, breakSeconds: $breakSeconds, showView: $whichView)
         case .focus:
-            FocusView(seconds: focusSeconds)
+            FocusView(seconds: focusSeconds, showView: $whichView)
         case .endFocus:
-            BreakView(seconds: breakSeconds)
+            BreakView(seconds: breakSeconds, showView: $whichView)
         }
     
     }
