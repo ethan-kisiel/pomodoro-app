@@ -13,6 +13,7 @@ enum ShowView
     case endFocus
 }
 struct ContentView: View {
+    @Environment(\.scenePhase) var scenePhase
     @State var whichView: ShowView = .create
     @State var focusSeconds: Int = 0
     @State var breakSeconds: Int = 0
@@ -22,7 +23,8 @@ struct ContentView: View {
         case .create:
             CreatePomodoroView(focusSeconds: $focusSeconds, breakSeconds: $breakSeconds, showView: $whichView)
         case .focus:
-            FocusView(seconds: focusSeconds, showView: $whichView)
+            FocusView(scenePhase: scenePhase, seconds: focusSeconds, showView: $whichView)
+      
         case .endFocus:
             BreakView(seconds: breakSeconds, showView: $whichView)
         }
