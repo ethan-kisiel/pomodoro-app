@@ -44,8 +44,11 @@ struct FocusView: View {
             TimerView(totalSeconds: seconds)
                 .onReceive(timer)
             { _ in
-                seconds -= 1
-                if seconds <= 0
+                if seconds > 0
+                {
+                    seconds -= 1
+                }
+                else
                 {
                     SoundManager.shared.playSound(soundName: "begin-break")
                     showView = .endFocus
@@ -68,6 +71,10 @@ struct FocusView: View {
                     wasBackground = false
                     enteredForeground = Date().timeIntervalSinceReferenceDate
                     seconds -= Int((enteredForeground - enteredBackground))
+                    if seconds < 0
+                    {
+                        seconds = 0
+                    }
                 }
  
             }
