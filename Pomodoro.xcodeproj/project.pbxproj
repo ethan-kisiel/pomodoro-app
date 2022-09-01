@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8889211328C0FE7D00CFA39F /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889211228C0FE7D00CFA39F /* NotificationManager.swift */; };
 		88A29E4B28BD23560068799C /* PomodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E4A28BD23560068799C /* PomodoroApp.swift */; };
 		88A29E4D28BD23560068799C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E4C28BD23560068799C /* ContentView.swift */; };
 		88A29E4F28BD23570068799C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E4E28BD23570068799C /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		8889210F28BFB65C00CFA39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8889211228C0FE7D00CFA39F /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		88A29E4728BD23560068799C /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A29E4A28BD23560068799C /* PomodoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroApp.swift; sourceTree = "<group>"; };
 		88A29E4C28BD23560068799C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				88A29E6628BD24AD0068799C /* SoundManager.swift */,
+				8889211228C0FE7D00CFA39F /* NotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				88A29E4D28BD23560068799C /* ContentView.swift in Sources */,
 				88A29E4B28BD23560068799C /* PomodoroApp.swift in Sources */,
 				88A29E7628BE9CC80068799C /* TimerView.swift in Sources */,
+				8889211328C0FE7D00CFA39F /* NotificationManager.swift in Sources */,
 				88A29E6728BD24AD0068799C /* SoundManager.swift in Sources */,
 				88A29E7228BD31680068799C /* TextInputFieldWithFocus.swift in Sources */,
 			);

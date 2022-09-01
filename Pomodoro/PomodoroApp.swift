@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
-
+import UserNotifications
 @main
 struct PomodoroApp: App {
+    @StateObject var notificationManager = NotificationManager()
     var body: some Scene {
         WindowGroup {
-
             ContentView()
+                .environmentObject(notificationManager)
         }
     }
 }

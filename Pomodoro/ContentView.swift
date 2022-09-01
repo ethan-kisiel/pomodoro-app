@@ -13,7 +13,9 @@ enum ShowView
     case endFocus
 }
 struct ContentView: View {
+    @EnvironmentObject var notificationManager: NotificationManager
     @Environment(\.scenePhase) var scenePhase
+    
     @State var whichView: ShowView = .create
     @State var focusSeconds: Int = 0
     @State var breakSeconds: Int = 0
@@ -22,11 +24,15 @@ struct ContentView: View {
         switch whichView {
         case .create:
             CreatePomodoroView(focusSeconds: $focusSeconds, breakSeconds: $breakSeconds, showView: $whichView)
+                .task
+                {
+                    try? await notificationManager.requestAuthorization()
+                }
         case .focus:
             FocusView(scenePhase: scenePhase, seconds: focusSeconds, showView: $whichView)
       
         case .endFocus:
-            BreakView(seconds: breakSeconds, showView: $whichView)
+            BreakView(scenePhase: scenePhase, seconds: breakSeconds, showView: $whichView)
         }
     
     }
@@ -35,5 +41,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(NotificationManager())
     }
 }

@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct BreakView: View {
+    let scenePhase: ScenePhase
+    
+    @AppStorage("enteredBackground") var enteredBackground: Double = Date().timeIntervalSinceReferenceDate
+    
+    @AppStorage("enteredForeground") var enteredForeground: Double = Date().timeIntervalSinceReferenceDate
+    
+    // helps determine if the scene was just inactive going into foreground
+    @State var wasBackground = false
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var seconds: Int
     @Binding var showView: ShowView
+    
+    // determines whether or not to start playing the notification sound
+    @State var soundIsPlaying: Bool = false
     
     var body: some View {
         ZStack(alignment: .trailing)
@@ -31,15 +43,32 @@ struct BreakView: View {
                 .onReceive(timer)
             { _ in
                 seconds -= 1
-                if seconds <= 30
+                if seconds <= 30 && !soundIsPlaying
                 {
                     SoundManager.shared.playSound(soundName: "return-to-focus")
+                    soundIsPlaying = true
                 }
                 if seconds <= 0
                 {
                     SoundManager.shared.stopSound()
+                    soundIsPlaying = false
                     showView = .focus
                 }
+            }
+            .onChange(of: scenePhase)
+            { phase in
+                if phase == .background
+                {
+                    wasBackground = true
+                    enteredBackground = Date().timeIntervalSinceReferenceDate
+                }
+                if phase == .active && wasBackground
+                {
+                    wasBackground = false
+                    enteredForeground = Date().timeIntervalSinceReferenceDate
+                    seconds -= Int((enteredForeground - enteredBackground))
+                }
+ 
             }
         }
         VStack
