@@ -14,6 +14,9 @@ struct FocusView: View {
     
     @AppStorage("enteredForeground") var enteredForeground: Double = Date().timeIntervalSinceReferenceDate
     
+    // track whether sound is playing
+    @State var soundIsPlaying: Bool = false
+    
     // helps determine if the scene was just inactive going into foreground
     @State var wasBackground = false
     
@@ -44,9 +47,10 @@ struct FocusView: View {
             TimerView(totalSeconds: seconds)
                 .onReceive(timer)
             { _ in
-                if seconds < 3
+                if seconds <= 3 && !soundIsPlaying
                 {
                     SoundManager.shared.playSound(soundName: "begin-break")
+                    soundIsPlaying.toggle()
                 }
                 if seconds > 0
                 {

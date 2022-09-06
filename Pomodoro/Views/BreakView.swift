@@ -50,14 +50,13 @@ struct BreakView: View {
                 else
                 {
                     SoundManager.shared.stopSound()
-                    soundIsPlaying = false
                     showView = .focus
                 }
                 
                 if seconds <= 30 && !soundIsPlaying
                 {
                     SoundManager.shared.playSound(soundName: "return-to-focus")
-                    soundIsPlaying = true
+                    soundIsPlaying.toggle()
                 }
             }
             .onChange(of: scenePhase)

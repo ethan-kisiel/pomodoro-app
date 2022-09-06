@@ -44,7 +44,7 @@ struct CreatePomodoroView: View {
                 }
             if showFocusPicker
             {
-                HMPicker(hours: $dFocusHours, minutes: $dFocusMinutes)
+                HMSPicker(hours: $dFocusHours, minutes: $dFocusMinutes, seconds: $dFocusSeconds)
             }
             Text("Break Time")
                 .dynamicTypeSize(.large)
@@ -55,7 +55,7 @@ struct CreatePomodoroView: View {
                 }
             if showBreakPicker
             {
-                HMPicker(hours: $dBreakHours, minutes: $dBreakMinutes)
+                HMSPicker(hours: $dBreakHours, minutes: $dBreakMinutes, seconds: $dBreakSeconds)
             }
             
             Spacer()
