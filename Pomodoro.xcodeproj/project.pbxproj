@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8889211328C0FE7D00CFA39F /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889211228C0FE7D00CFA39F /* NotificationManager.swift */; };
+		8889214B28C7A68100CFA39F /* HMPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889214A28C7A68100CFA39F /* HMPicker.swift */; };
 		88A29E4B28BD23560068799C /* PomodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E4A28BD23560068799C /* PomodoroApp.swift */; };
 		88A29E4D28BD23560068799C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A29E4C28BD23560068799C /* ContentView.swift */; };
 		88A29E4F28BD23570068799C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A29E4E28BD23570068799C /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		8889210F28BFB65C00CFA39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8889211228C0FE7D00CFA39F /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		8889214A28C7A68100CFA39F /* HMPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMPicker.swift; sourceTree = "<group>"; };
 		88A29E4728BD23560068799C /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A29E4A28BD23560068799C /* PomodoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroApp.swift; sourceTree = "<group>"; };
 		88A29E4C28BD23560068799C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8889214928C7A64D00CFA39F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				88A29E7328BD47670068799C /* HMSPicker.swift */,
+				88A29E7528BE9CC80068799C /* TimerView.swift */,
+				8889214A28C7A68100CFA39F /* HMPicker.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		88A29E3E28BD23560068799C = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +88,7 @@
 		88A29E4928BD23560068799C /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				8889214928C7A64D00CFA39F /* Modules */,
 				8889210F28BFB65C00CFA39F /* Info.plist */,
 				88A29E6528BD24960068799C /* Managers */,
 				88A29E6028BD24780068799C /* Audio */,
@@ -100,11 +113,9 @@
 		88A29E5828BD23BD0068799C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				88A29E7328BD47670068799C /* HMSPicker.swift */,
 				88A29E5928BD23CA0068799C /* BreakView.swift */,
 				88A29E5B28BD23D30068799C /* FocusView.swift */,
 				88A29E5D28BD23E10068799C /* CreatePomodoroView.swift */,
-				88A29E7528BE9CC80068799C /* TimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +223,7 @@
 				88A29E5A28BD23CA0068799C /* BreakView.swift in Sources */,
 				88A29E5C28BD23D30068799C /* FocusView.swift in Sources */,
 				88A29E4D28BD23560068799C /* ContentView.swift in Sources */,
+				8889214B28C7A68100CFA39F /* HMPicker.swift in Sources */,
 				88A29E4B28BD23560068799C /* PomodoroApp.swift in Sources */,
 				88A29E7628BE9CC80068799C /* TimerView.swift in Sources */,
 				8889211328C0FE7D00CFA39F /* NotificationManager.swift in Sources */,

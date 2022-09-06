@@ -24,7 +24,7 @@ struct FocusView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var seconds: Int
     @Binding var showView: ShowView
-    
+
     @State var notificationID: String = ""
     var body: some View {
         ZStack(alignment: .trailing)
@@ -44,13 +44,17 @@ struct FocusView: View {
             TimerView(totalSeconds: seconds)
                 .onReceive(timer)
             { _ in
+                if seconds < 3
+                {
+                    SoundManager.shared.playSound(soundName: "begin-break")
+                }
                 if seconds > 0
                 {
                     seconds -= 1
                 }
                 else
                 {
-                    SoundManager.shared.playSound(soundName: "begin-break")
+                    SoundManager.shared.stopSound()
                     showView = .endFocus
                 }
             }

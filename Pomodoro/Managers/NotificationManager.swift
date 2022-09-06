@@ -27,10 +27,12 @@ class NotificationManager: ObservableObject
         endFocusNotification = UNMutableNotificationContent()
         endFocusNotification.title = "Focus Time has Ended"
         endFocusNotification.body = "Please return to the app to continue."
+        endFocusNotification.sound = UNNotificationSound.default
         
         endBreakNotification = UNMutableNotificationContent()
         endBreakNotification.title = "Break Time has Ended"
         endBreakNotification.body = "Please return to the app to continue."
+        endBreakNotification.sound = UNNotificationSound.default
     }
     
     func createTrigger(_ seconds: Double) -> UNTimeIntervalNotificationTrigger
