@@ -30,9 +30,8 @@ struct FocusView: View {
 
     @State var notificationID: String = ""
     var body: some View {
-        ZStack(alignment: .trailing)
+        HStack
         {
-            Spacer()
             Image(systemName:"xmark.circle.fill")
                 .foregroundColor(.red)
                 .onTapGesture
@@ -40,11 +39,13 @@ struct FocusView: View {
                     SoundManager.shared.playSound(soundName: "button-press")
                     showView = .create
                 }
-        }
-        Spacer()
+            Spacer()
+            //Image(systemName: "")
+        }.padding(8)
         VStack
         {
             TimerView(totalSeconds: seconds)
+                .frame(height: UIScreen.main.bounds.height * 0.888)
                 .onReceive(timer)
             { _ in
                 if seconds <= 3 && !soundIsPlaying
@@ -87,13 +88,15 @@ struct FocusView: View {
  
             }
         }
-        Spacer()
     }
 }
 
 struct FocusView_Previews: PreviewProvider {
+    @State var showView: ShowView = .focus
+    var scenePhase: ScenePhase = .active
     static var previews: some View {
         Text("No Preview")
-        //FocusView(seconds: 0)
+        
+        //FocusView(seconds: 360)
     }
 }

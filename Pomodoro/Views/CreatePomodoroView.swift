@@ -28,8 +28,8 @@ struct CreatePomodoroView: View {
     @State var dBreakMinutes = 0
     @State var dBreakSeconds = 0
     
-    @State var showFocusPicker = false
-    @State var showBreakPicker = false
+    @State var showFocusPicker = true
+    @State var showBreakPicker = true
     
     var body: some View {
         
@@ -45,7 +45,9 @@ struct CreatePomodoroView: View {
             if showFocusPicker
             {
                 HMSPicker(hours: $dFocusHours, minutes: $dFocusMinutes, seconds: $dFocusSeconds)
+                    .frame(height: UIScreen.main.bounds.height * 0.233)
             }
+            Spacer()
             Text("Break Time")
                 .dynamicTypeSize(.large)
                 .fontWeight(.bold)
@@ -56,6 +58,7 @@ struct CreatePomodoroView: View {
             if showBreakPicker
             {
                 HMSPicker(hours: $dBreakHours, minutes: $dBreakMinutes, seconds: $dBreakSeconds)
+                    .frame(height: UIScreen.main.bounds.height * 0.233)
             }
             
             Spacer()
@@ -67,11 +70,12 @@ struct CreatePomodoroView: View {
             })
             {
                 Text("Start Pomodoro")
+                    .frame(maxWidth: .infinity)
             }.softButtonStyle(RoundedRectangle(cornerRadius: 10))
+                .frame(height: UIScreen.main.bounds.height * 0.333)
             Spacer()
-        }
+        }.padding(8)
 
-        Spacer()
     }
 }
 

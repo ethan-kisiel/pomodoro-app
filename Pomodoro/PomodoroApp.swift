@@ -14,6 +14,7 @@ struct PomodoroApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(notificationManager)
+                .preferredColorScheme(.light)
         }
     }
 }

@@ -25,9 +25,8 @@ struct BreakView: View {
     @State var soundIsPlaying: Bool = false
     
     var body: some View {
-        ZStack(alignment: .trailing)
+        VStack(alignment: .leading)
         {
-            Spacer()
             Image(systemName:"xmark.circle.fill")
                 .foregroundColor(.red)
                 .onTapGesture
@@ -36,7 +35,6 @@ struct BreakView: View {
                     showView = .create
                 }
         }
-        Spacer()
         VStack
         {
             TimerView(totalSeconds: seconds)
