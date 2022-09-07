@@ -26,7 +26,9 @@ struct BreakView: View {
     @State var soundIsPlaying: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading)
+        Spacer()
+        // TODO: this can/needs to be abstracted
+        HStack
         {
             Image(systemName:"xmark.circle.fill")
                 .foregroundColor(.red)
@@ -35,10 +37,19 @@ struct BreakView: View {
                     SoundManager.shared.playSound(soundName: "button-press")
                     showView = .create
                 }
+            Text("Break")
+                .dynamicTypeSize(.xxxLarge)
+                .fontWeight(.bold)
+                .padding(8)
+                .frame(height: UIScreen.main.bounds.height * 0.044)
+            
+            Image(systemName: "play.circle.fill")
+                .foregroundColor(.blue)
         }
         VStack
         {
             TimerView(totalSeconds: seconds)
+                .frame(height: UIScreen.main.bounds.height * 0.766)
                 .onReceive(timer)
             { _ in
 
@@ -71,6 +82,10 @@ struct BreakView: View {
                     wasBackground = false
                     enteredForeground = Date().timeIntervalSinceReferenceDate
                     seconds -= Int((enteredForeground - enteredBackground))
+                    if seconds < 0
+                    {
+                        seconds = 0
+                    }
                 }
  
             }
@@ -84,8 +99,10 @@ struct BreakView: View {
             })
             {
                 Text("Return to Focus")
+                    .frame(maxWidth: .infinity)
             }.softButtonStyle(RoundedRectangle(cornerRadius: 10))
-        }
+            Spacer()
+        }.padding(8)
     }
 }
 

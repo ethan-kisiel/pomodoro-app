@@ -39,9 +39,13 @@ struct FocusView: View {
                     SoundManager.shared.playSound(soundName: "button-press")
                     showView = .create
                 }
-            Spacer()
-            //Image(systemName: "")
-        }.padding(8)
+            Text("Focus")
+                .dynamicTypeSize(.xxxLarge)
+                .fontWeight(.bold)
+                .padding(8)
+            Image(systemName: "play.circle.fill")
+                .foregroundColor(.blue)
+        }
         VStack
         {
             TimerView(totalSeconds: seconds)

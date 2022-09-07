@@ -45,7 +45,7 @@ struct CreatePomodoroView: View {
             if showFocusPicker
             {
                 HMSPicker(hours: $dFocusHours, minutes: $dFocusMinutes, seconds: $dFocusSeconds)
-                    .frame(height: UIScreen.main.bounds.height * 0.233)
+                    .frame(height: UIScreen.main.bounds.height * 0.333)
             }
             Spacer()
             Text("Break Time")
@@ -58,7 +58,7 @@ struct CreatePomodoroView: View {
             if showBreakPicker
             {
                 HMSPicker(hours: $dBreakHours, minutes: $dBreakMinutes, seconds: $dBreakSeconds)
-                    .frame(height: UIScreen.main.bounds.height * 0.233)
+                    .frame(height: UIScreen.main.bounds.height * 0.333)
             }
             
             Spacer()
