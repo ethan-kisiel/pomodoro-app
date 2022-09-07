@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BreakView: View {
+    @EnvironmentObject var notificationManager: NotificationManager
     let scenePhase: ScenePhase
     
     @AppStorage("enteredBackground") var enteredBackground: Double = Date().timeIntervalSinceReferenceDate
@@ -61,6 +62,7 @@ struct BreakView: View {
             { phase in
                 if phase == .background
                 {
+                    notificationManager.scheduleNotification(isEndFocusNotification: false, seconds: seconds)
                     wasBackground = true
                     enteredBackground = Date().timeIntervalSinceReferenceDate
                 }

@@ -13,6 +13,7 @@ import NotificationCenter
 class NotificationManager: ObservableObject
 {
     let notificationCenter = UNUserNotificationCenter.current()
+    var pendingNotifications: [String] = []
     
     func requestAuthorization() async throws
     {
@@ -42,9 +43,8 @@ class NotificationManager: ObservableObject
         return trigger
     }
     
-    func scheduleNotification(isEndFocusNotification: Bool, seconds: Int) -> String
+    func scheduleNotification(isEndFocusNotification: Bool, seconds: Int)
     {
-        var stringToReturn: String = "" // TODO: Replace with Empty String
         
         let dSeconds = Double(seconds)
         
@@ -57,20 +57,17 @@ class NotificationManager: ObservableObject
         {(error) in
             if error == nil
             {
-                stringToReturn = identifier
-                print(dSeconds)
+                self.pendingNotifications.append(identifier)
             }
             else
             {
                 print(error?.localizedDescription)
             }
         }
-        return stringToReturn
     }
     
-    func cancelNotification(_ id: String)
+    func cancelNotifications()
     {
-        let identifiers: [String] = [id]
-        notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: pendingNotifications)
     }
 }

@@ -67,7 +67,7 @@ struct FocusView: View {
             { phase in
                 if phase == .background
                 {
-                    notificationID = notificationManager.scheduleNotification(isEndFocusNotification: true, seconds: seconds)
+                    notificationManager.scheduleNotification(isEndFocusNotification: true, seconds: seconds)
                     wasBackground = true
                     enteredBackground = Date().timeIntervalSinceReferenceDate
                 }
@@ -75,7 +75,7 @@ struct FocusView: View {
                 {
                     if notificationID != ""
                     {
-                        notificationManager.cancelNotification(notificationID)
+                        notificationManager.cancelNotifications()
                     }
                     wasBackground = false
                     enteredForeground = Date().timeIntervalSinceReferenceDate
