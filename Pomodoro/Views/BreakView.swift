@@ -15,6 +15,9 @@ struct BreakView: View {
     
     @AppStorage("enteredForeground") var enteredForeground: Double = Date().timeIntervalSinceReferenceDate
     
+    // isPaused: var for pausing the timer
+    @State var isPaused: Bool = false
+    
     // helps determine if the scene was just inactive going into foreground
     @State var wasBackground = false
     
@@ -43,8 +46,12 @@ struct BreakView: View {
                 .padding(8)
                 .frame(height: UIScreen.main.bounds.height * 0.044)
             
-            Image(systemName: "play.circle.fill")
+            Image(systemName: isPaused ? "play.circle.fill" : "pause.circle.fill")
                 .foregroundColor(.blue)
+                .onTapGesture {
+                    isPaused.toggle()
+                    SoundManager.shared.playSound(soundName: "button-press")
+                }
         }
         VStack
         {
@@ -53,11 +60,11 @@ struct BreakView: View {
                 .onReceive(timer)
             { _ in
 
-                if seconds > 0
+                if seconds > 0 && !isPaused
                 {
                     seconds -= 1
                 }
-                else
+                else if !isPaused
                 {
                     SoundManager.shared.stopSound()
                     showView = .focus

@@ -15,6 +15,9 @@ struct PomodoroApp: App {
             ContentView()
                 .environmentObject(notificationManager)
                 .preferredColorScheme(.light)
+                .onAppear{
+                    UIApplication.shared.isIdleTimerDisabled = true
+                }
         }
     }
 }

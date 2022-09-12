@@ -13,6 +13,8 @@ struct FocusView: View {
     @AppStorage("enteredBackground") var enteredBackground: Double = Date().timeIntervalSinceReferenceDate
     
     @AppStorage("enteredForeground") var enteredForeground: Double = Date().timeIntervalSinceReferenceDate
+    // isPaused: var for pausing the timer
+    @State var isPaused: Bool = false
     
     // track whether sound is playing
     @State var soundIsPlaying: Bool = false
@@ -43,8 +45,12 @@ struct FocusView: View {
                 .dynamicTypeSize(.xxxLarge)
                 .fontWeight(.bold)
                 .padding(8)
-            Image(systemName: "play.circle.fill")
+            Image(systemName: isPaused ? "play.circle.fill" : "pause.circle.fill")
                 .foregroundColor(.blue)
+                .onTapGesture {
+                    isPaused.toggle()
+                    SoundManager.shared.playSound(soundName: "button-press")
+                }
         }
         VStack
         {
@@ -57,11 +63,11 @@ struct FocusView: View {
                     SoundManager.shared.playSound(soundName: "begin-break")
                     soundIsPlaying.toggle()
                 }
-                if seconds > 0
+                if seconds > 0  && !isPaused
                 {
                     seconds -= 1
                 }
-                else
+                else if !isPaused
                 {
                     SoundManager.shared.stopSound()
                     showView = .endFocus
@@ -75,7 +81,7 @@ struct FocusView: View {
                     wasBackground = true
                     enteredBackground = Date().timeIntervalSinceReferenceDate
                 }
-                if phase == .active && wasBackground
+                if phase == .active && wasBackground  && !isPaused
                 {
                     if notificationID != ""
                     {
