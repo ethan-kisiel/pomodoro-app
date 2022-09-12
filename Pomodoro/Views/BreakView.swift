@@ -84,7 +84,7 @@ struct BreakView: View {
                     wasBackground = true
                     enteredBackground = Date().timeIntervalSinceReferenceDate
                 }
-                if phase == .active && wasBackground
+                if phase == .active && wasBackground && !isPaused
                 {
                     wasBackground = false
                     enteredForeground = Date().timeIntervalSinceReferenceDate
